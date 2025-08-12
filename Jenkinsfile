@@ -19,7 +19,8 @@ pipeline {
                    
                     sh '''
                         echo "Downloading Trivy vulnerability DB..."
-                        trivy --download-db-only --timeout 5m
+                        trivy image --timeout 5m --exit-code 1 my-flask-app:latest
+
                     '''
 
                     
